@@ -14,3 +14,7 @@ test:
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
