@@ -4,3 +4,9 @@ machine:
   hosts:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
+
+general:
+  artifacts:
+    - "selenium/screenshots" # relative to the build directory
+    - "~/simplecov" # relative to the user's home directory
+    - "test.txt" # a single file, relative to the build directory
