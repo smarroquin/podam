@@ -15,10 +15,13 @@ test:
     - mkdir -p $CIRCLE_ARTIFACTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;
 
-  override:
-    - php ./app/run-server.php --daemon
-    - php ./test-suite/run.php --unit-tests
 checkout:
   post:
     - git submodule sync
     - git submodule update --init
+    
+ deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: foo-bar-123
