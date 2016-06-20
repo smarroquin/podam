@@ -1,0 +1,3 @@
+$ touch log/.gitkeep
+$ git add log/.gitkeep
+$ git commit
