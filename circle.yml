@@ -10,3 +10,7 @@ general:
     - "selenium/screenshots" # relative to the build directory
     - "~/simplecov" # relative to the user's home directory
     - "test.txt" # a single file, relative to the build directory
+test:
+  post:
+    - mkdir -p $CIRCLE_ARTIFACTS/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;
