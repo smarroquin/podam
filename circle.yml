@@ -20,8 +20,8 @@ checkout:
     - git submodule sync
     - git submodule update --init
     
- deployment:
+deployment:
   staging:
-    branch: master
-    heroku:
-      appname: foo-bar-123
+     branch: master
+     heroku:
+        appname: foo-bar-123
