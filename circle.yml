@@ -23,7 +23,7 @@ dependencies:
 test:
   post:
    - mkdir $CIRCLE_ARTIFACTS/json_output
-   - mv solo/target/*.json $CIRCLE_ARTIFACTS/json_output
+   - mv "https://circleci.com/api/v1/me/*.json" $CIRCLE_ARTIFACTS/json_output
  
 
 deployment:
