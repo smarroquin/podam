@@ -10,10 +10,7 @@ machine:
   php:
     version: 5.4.5
     
-checkout:
-  post:
-  
-    - mv config/.app.yml config/app.yml
+
 test:
   post:
     - bundle exec rake custom:test:suite
