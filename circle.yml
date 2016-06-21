@@ -14,15 +14,6 @@ machine:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
 
-
-########################
-# Customize dependencies
-########################
-dependencies:
-   override:
-    - bundle install:
-        timeout: 180 # fail if it takes over 3 minutes (note ':' on previous line)
-
 ########################
 # Customize database setup
 ########################
