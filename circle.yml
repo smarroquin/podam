@@ -19,7 +19,7 @@ machine:
 
   # Add some environmental variables
   pre:
-    - echo 'export CIRCLE_ENV=test' >> ~./circlerc
+    - echo 'export CIRCLE_ENV=CIRCLE_ARTIFACT' >> ~./circlerc
 
 ########################
 # Customize checkout
