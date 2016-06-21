@@ -1,9 +1,4 @@
-general:
-  build_dir: "https://circleci.com/gh/smarroquin/podam/"
-  artifacts:
-    - "selenium/screenshots" # relative to the build directory
-    - "~/simplecov" # relative to the user's home directory
-    - "test.txt" # a single file, relative to the build directory
+
   
 ########################
 # Customize the test machine
@@ -26,3 +21,11 @@ deployment:
      branch: master
      heroku:
         appname: foo-bar-123
+
+
+general:
+  build_dir: "https://circleci.com/gh/smarroquin/podam/"
+  artifacts:
+    - "selenium/screenshots" # relative to the build directory
+    - "~/simplecov" # relative to the user's home directory
+    - "test.txt" # a single file, relative to the build directory
