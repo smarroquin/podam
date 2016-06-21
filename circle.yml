@@ -21,8 +21,6 @@ general:
     - "selenium/screenshots" # relative to the build directory
     - "~/simplecov" # relative to the user's home directory
     - "test.txt" # a single file, relative to the build directory
-    
-  build_dir: api
   
   
 deployment:
