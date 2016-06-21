@@ -15,13 +15,6 @@ machine:
     dev.mycompany.com: 127.0.0.1
 
 ########################
-# Customize database setup
-########################
-database:
-  pre:
-    - mv config/database.yml.ci config/database.yml # completely ignore Circle's database.yml
-
-########################
 # Customize test commands
 ########################
 test:
