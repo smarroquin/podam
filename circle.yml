@@ -19,12 +19,7 @@ machine:
 # Customize dependencies
 ########################
 dependencies:
-  pre:
-  
-    - gem uninstall bundler # use a custom version of bunlder
-    - gem install bundler --pre
-
-  override:
+   override:
     - bundle install:
         timeout: 180 # fail if it takes over 3 minutes (note ':' on previous line)
 
