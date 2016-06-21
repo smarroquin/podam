@@ -10,6 +10,8 @@ machine:
   php:
     version: 5.4.5
     
+environment:
+    CIRCLE_ARTIFACT: $CIRCLE_ARTIFACT    
 
 test:
   post:
