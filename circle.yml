@@ -4,30 +4,45 @@ machine:
   hosts:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
+    
+  java:
+    version: openjdk7
+  php:
+    version: 5.4.5
+    
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+    - mv config/.app.yml config/app.yml
+test:
+  post:
+    - bundle exec rake custom:test:suite
+    
+dependencies:
+  override:
+    - exit 0
+test:
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} C/junit/ \;
+     - mkdir $CIRCLE_ARTIFACTS/json_output
+    - mv solo/target/*.json $CIRCLE_ARTIFACTS/json_output
 
+    
+
+deployment:
+  staging:
+     branch: master
+     heroku:
+        appname: foo-bar-123
+        
 general:
+  build_dir: api
+
   artifacts:
     - "selenium/screenshots" # relative to the build directory
     - "~/simplecov" # relative to the user's home directory
     - "test.txt" # a single file, relative to the build directory
     
   build_dir: api
-test:
-  post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} C/junit/ \;
-
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
-    
-dependencies:
-  override:
-    - exit 0
-    
-deployment:
-  staging:
-     branch: master
-     heroku:
-        appname: foo-bar-123
