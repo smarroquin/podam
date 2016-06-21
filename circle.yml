@@ -20,8 +20,8 @@ dependencies:
     - exit 0
 test:
   post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} C/junit/ \;
+   - mkdir $CIRCLE_ARTIFACTS/json_output
+   - mv solo/target/*.json $CIRCLE_ARTIFACTS/json_output
  
 
 deployment:
