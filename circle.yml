@@ -1,7 +1,10 @@
 general:
   build_dir: "https://circleci.com/gh/smarroquin/podam/"
-
-
+  artifacts:
+    - "selenium/screenshots" # relative to the build directory
+    - "~/simplecov" # relative to the user's home directory
+    - "test.txt" # a single file, relative to the build directory
+  
 ########################
 # Customize the test machine
 ########################
@@ -18,12 +21,6 @@ machine:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
 
-  artifacts:
-    - "selenium/screenshots" # relative to the build directory
-    - "~/simplecov" # relative to the user's home directory
-    - "test.txt" # a single file, relative to the build directory
-  
-  
 deployment:
   staging:
      branch: master
