@@ -17,13 +17,6 @@ machine:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
 
-########################
-# Customize checkout
-########################
-checkout:
-  post:
-    - git submodule update --init # use submodules
-    - mv config/database.yml.ci config/database.yml # use a test version of your database.yml file
 
 ########################
 # Customize dependencies
