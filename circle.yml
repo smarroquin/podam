@@ -1,5 +1,3 @@
-
-  
 ########################
 # Customize the test machine
 ########################
@@ -9,9 +7,7 @@ machine:
   timezone:
     America/Los_Angeles
 
-  
-
-  # Override /etc/hosts
+    # Override /etc/hosts
   hosts:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
@@ -25,6 +21,7 @@ deployment:
 
 general:
   build_dir: "https://circleci.com/gh/smarroquin/podam/"
+  
   artifacts:
     - "selenium/screenshots" # relative to the build directory
     - "~/simplecov" # relative to the user's home directory
